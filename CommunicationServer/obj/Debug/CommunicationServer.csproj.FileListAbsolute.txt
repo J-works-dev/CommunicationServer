@@ -1,0 +1,10 @@
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\bin\Debug\CommunicationServer.exe.config
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\bin\Debug\CommunicationServer.exe
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\bin\Debug\CommunicationServer.pdb
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.csprojAssemblyReference.cache
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.Form1.resources
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.Properties.Resources.resources
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.csproj.GenerateResource.cache
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.csproj.CoreCompileInputs.cache
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.exe
+C:\Users\Jeremy\source\repos\CommunicationServer\CommunicationServer\obj\Debug\CommunicationServer.pdb
