@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommunicationServer
@@ -14,12 +9,17 @@ namespace CommunicationServer
     {
         private Pipe pipeServer = new Pipe();
         private List<User> users = new List<User>();
+        
         public Form1()
         {
             InitializeComponent();
 
             pipeServer.MessageReceived += pipeServer_MessageReceived;
             pipeServer.ClientDisconnected += pipeServer_ClientDisconnected;
+
+            users.Add(new User("admin", "0000"));
+            users.Add(new User("client1", "1111"));
+            users.Add(new User("client2", "2222"));
         }
         void pipeServer_ClientDisconnected()
         {
@@ -55,15 +55,23 @@ namespace CommunicationServer
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-
-            if (!pipeServer.Running)
+            string id = textBoxId.Text;
+            string pw = textBoxPw.Text;
+            if (id == "admin" && pw == "0000")
             {
-                pipeServer.Start(textBoxPipe.Text);
-                buttonStart.Enabled = false;
+                if (!pipeServer.Running)
+                {
+                    pipeServer.Start(textBoxPipe.Text);
+                    buttonStart.Enabled = false;
+                }
+                else
+                {
+                    statusStrip.Text = "Server already running.";
+                }
             }
             else
             {
-                statusStrip.Text = "Server already running.";
+                statusStrip.Text = "Wrong ID or Password Input. Try again.";
             }
         }
     }
