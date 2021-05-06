@@ -37,13 +37,14 @@ namespace CommunicationServer
             this.textBoxSend = new System.Windows.Forms.TextBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusText = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPipe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.statusStrip1.SuspendLayout();
+            this.textBoxReceived = new System.Windows.Forms.TextBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxId
@@ -124,16 +125,17 @@ namespace CommunicationServer
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 445);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(497, 22);
-            this.statusStrip1.TabIndex = 8;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusText,
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 445);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(497, 22);
+            this.statusStrip.TabIndex = 8;
+            this.statusStrip.Text = "statusStrip1";
             // 
             // StatusText
             // 
@@ -149,12 +151,12 @@ namespace CommunicationServer
             this.label2.TabIndex = 9;
             this.label2.Text = "Pipe Name:";
             // 
-            // textBox1
+            // textBoxPipe
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 26);
-            this.textBox1.TabIndex = 10;
+            this.textBoxPipe.Location = new System.Drawing.Point(25, 45);
+            this.textBoxPipe.Name = "textBoxPipe";
+            this.textBoxPipe.Size = new System.Drawing.Size(314, 26);
+            this.textBoxPipe.TabIndex = 10;
             // 
             // label3
             // 
@@ -165,26 +167,31 @@ namespace CommunicationServer
             this.label3.TabIndex = 11;
             this.label3.Text = "Messages:";
             // 
-            // textBox2
+            // textBoxReceived
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 197);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(450, 142);
-            this.textBox2.TabIndex = 12;
+            this.textBoxReceived.Location = new System.Drawing.Point(25, 197);
+            this.textBoxReceived.Multiline = true;
+            this.textBoxReceived.Name = "textBoxReceived";
+            this.textBoxReceived.ReadOnly = true;
+            this.textBoxReceived.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxReceived.Size = new System.Drawing.Size(450, 142);
+            this.textBoxReceived.TabIndex = 12;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 16);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 467);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxReceived);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPipe);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBoxSend);
@@ -197,8 +204,8 @@ namespace CommunicationServer
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Server";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,12 +221,13 @@ namespace CommunicationServer
         private System.Windows.Forms.TextBox textBoxSend;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel StatusText;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPipe;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxReceived;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
