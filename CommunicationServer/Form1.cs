@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace CommunicationServer
 {
@@ -9,7 +10,7 @@ namespace CommunicationServer
     {
         private Pipe pipeServer = new Pipe();
         private List<User> users = new List<User>();
-        
+        private bool login = false;
         public Form1()
         {
             InitializeComponent();
@@ -39,9 +40,45 @@ namespace CommunicationServer
         void DisplayMessageReceived(byte[] message)
         {
             ASCIIEncoding encoder = new ASCIIEncoding();
-            string str = encoder.GetString(message, 0, message.Length);
+            byte[] msgBuffer;
 
-            textBoxReceived.Text += "Client: " + str + "\r\n";
+            string str = encoder.GetString(message, 0, message.Length);
+            if (!login)
+            {
+                string[] clientInfo = str.Split(',');
+                string id = clientInfo[0];
+                string pw = clientInfo[1];
+
+                foreach (User user in users)
+                {
+                    if (user.Id.Equals(id))
+                    {
+                        if (user.Verify(pw))
+                        {
+                            msgBuffer = encoder.GetBytes("logged in");
+                            pipeServer.SendMessage(msgBuffer);
+                            login = true;
+                        }
+                        else
+                        {
+                            msgBuffer = encoder.GetBytes("Wrong Password");
+                            pipeServer.SendMessage(msgBuffer);
+                        }
+                    }
+                    else
+                    {
+                        if (user == users.Last()) // [users.Count - 1]
+                        {
+                            msgBuffer = encoder.GetBytes("No User found");
+                            pipeServer.SendMessage(msgBuffer);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                textBoxReceived.Text += "Client: " + str + "\r\n";
+            }
         }
 
         private void buttonSend_Click(object sender, EventArgs e)

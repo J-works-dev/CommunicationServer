@@ -38,7 +38,7 @@ namespace CommunicationServer
             this.password = string.Format("$MYHASH$V1${0}", base64Hash);
         }
 
-        public bool Verify(string id, string pw)
+        public bool Verify(string pw)
         {
             // var splittedHash = password.Replace("$MYHASH$V1$", "").Split('$');
             // var base64Hash = splittedHash[1];
