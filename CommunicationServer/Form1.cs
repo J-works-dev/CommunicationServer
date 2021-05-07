@@ -63,15 +63,16 @@ namespace CommunicationServer
                 {
                     pipeServer.Start(textBoxPipe.Text);
                     buttonStart.Enabled = false;
+                    toolStripStatusLabel2.Text = "Admin Logged in";
                 }
                 else
                 {
-                    statusStrip.Text = "Server already running.";
+                    toolStripStatusLabel2.Text = "Server already running.";
                 }
             }
             else
             {
-                statusStrip.Text = "Wrong ID or Password Input. Try again.";
+                toolStripStatusLabel2.Text = "Wrong ID or Password Input. Try again.";
             }
         }
     }

@@ -44,16 +44,17 @@ namespace CommunicationServer
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxReceived = new System.Windows.Forms.TextBox();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxId
             // 
-            this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxId.Location = new System.Drawing.Point(25, 130);
             this.textBoxId.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(152, 30);
+            this.textBoxId.Size = new System.Drawing.Size(152, 24);
             this.textBoxId.TabIndex = 0;
             // 
             // label1
@@ -68,11 +69,11 @@ namespace CommunicationServer
             // 
             // textBoxPw
             // 
-            this.textBoxPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPw.Location = new System.Drawing.Point(185, 130);
             this.textBoxPw.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPw.Name = "textBoxPw";
-            this.textBoxPw.Size = new System.Drawing.Size(154, 30);
+            this.textBoxPw.Size = new System.Drawing.Size(154, 24);
             this.textBoxPw.TabIndex = 2;
             // 
             // labelId
@@ -97,7 +98,7 @@ namespace CommunicationServer
             // 
             // textBoxSend
             // 
-            this.textBoxSend.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSend.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSend.Location = new System.Drawing.Point(25, 352);
             this.textBoxSend.Multiline = true;
             this.textBoxSend.Name = "textBoxSend";
@@ -119,7 +120,7 @@ namespace CommunicationServer
             this.buttonStart.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.Location = new System.Drawing.Point(346, 130);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(129, 30);
+            this.buttonStart.Size = new System.Drawing.Size(129, 24);
             this.buttonStart.TabIndex = 7;
             this.buttonStart.Text = "Start Server";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -130,7 +131,8 @@ namespace CommunicationServer
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusText,
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
             this.statusStrip.Location = new System.Drawing.Point(0, 445);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(497, 22);
@@ -157,6 +159,7 @@ namespace CommunicationServer
             this.textBoxPipe.Name = "textBoxPipe";
             this.textBoxPipe.Size = new System.Drawing.Size(314, 26);
             this.textBoxPipe.TabIndex = 10;
+            this.textBoxPipe.Text = "\\\\.\\pipe\\myNamedPipe";
             // 
             // label3
             // 
@@ -181,6 +184,11 @@ namespace CommunicationServer
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 16);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 18);
             // 
             // Form1
             // 
@@ -228,6 +236,7 @@ namespace CommunicationServer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxReceived;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 
